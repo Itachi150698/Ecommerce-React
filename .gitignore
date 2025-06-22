@@ -1,0 +1,43 @@
+# Top-level node_modules (if accidentally installed here)
+node_modules/
+
+# Environment variables (common practice to have .env in backend and frontend)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# ========================
+# Frontend (React)
+# ========================
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# ========================
+# Backend (Node/Express)
+# ========================
+backend/node_modules/
+backend/logs/
+backend/.env
+backend/.env.local
+backend/.env.*.local
+backend/coverage/
+backend/dist/
+backend/dump/
