@@ -88,3 +88,15 @@ export const getSingleProduct = handleAsyncError(async (req, res, next) => {
     product
   });
 })
+
+//Admin: Get all products
+export const getAdminProducts = handleAsyncError(async (req, res, next) => {
+  const products = await Product.find();
+  if (!products || products.length === 0) {
+    return next(new HandleError("No products found", 404));
+  }
+  res.status(200).json({
+    success: true,
+    products
+  });
+})
