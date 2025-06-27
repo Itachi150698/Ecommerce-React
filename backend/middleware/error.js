@@ -10,6 +10,12 @@ export default (err, req, res, next) => {
     err = new HandleError(message, 404);
   }
 
+  // Mongoose duplicate key error handling
+  if (err.code === 11000) {
+    const message = `This ${Object.keys(err.keyValue)} already registered. Please Login to continue.`;
+    err = new HandleError(message, 400);
+  }
+
   res.status(err.statusCode).json({
     success: false,
     message: err.message,
